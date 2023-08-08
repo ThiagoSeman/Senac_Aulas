@@ -23,6 +23,7 @@ namespace Aula1 // Note: actual namespace depends on the project name.
             InserirPessoa();
             PrintarPessoas(Cliente.id);
         }
+
         private static void InserirPessoa()
         {
             Console.WriteLine($"Digite o Nome :");
