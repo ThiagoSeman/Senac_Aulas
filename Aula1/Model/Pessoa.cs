@@ -8,7 +8,7 @@ namespace Aula1.Model
 {
     public class Pessoa
     {
-        public int id { get; set; }
+        public Guid id { get; set; }
         public string nome { get; set; }
         public DateTime DataNac { get; set; }
         public string CPF { get; set; }
@@ -17,7 +17,8 @@ namespace Aula1.Model
 
     public class Endereco
     {
-        public int id { get; set; }
+        public Guid id { get; set; }
+        public Guid idCliente { get; set; }
         public string logradouro { get; set; }
         public string numero { get; set; }
     }
