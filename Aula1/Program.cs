@@ -4,6 +4,7 @@ using Aula1.Model;
 
 namespace Aula1 // Note: actual namespace depends on the project name.
 {
+
     internal class Program
     {
         public static Pessoa Cliente { get; set; } = new Pessoa();
