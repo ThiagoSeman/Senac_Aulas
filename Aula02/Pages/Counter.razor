@@ -1,14 +1,26 @@
 ﻿@page "/counter"
+@using Aula1.Model;
 
-<PageTitle>Counter</PageTitle>
+<PageTitle>New Pessoa</PageTitle>
 
-<h1>Counter</h1>
+<h1>New Pessoa</h1>
+
+<h3>Nome</h3>
+<input  type="text" @bind="pessoa.nome" />
+<h3>CPF</h3>
+<input type="text" @bind="pessoa.CPF" />
+<h3>Data de Nascimento</h3>
+<input type="date" @bind="pessoa.DataNac" />
 
 <p role="status">Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
 @code {
+
+
+    public static List<Pessoa> pessoas { get; set; } = new();
+    public Pessoa pessoa = new Pessoa();
     private int currentCount = 0;
 
     private void IncrementCount()

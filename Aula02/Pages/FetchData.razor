@@ -1,5 +1,6 @@
 ﻿@page "/fetchdata"
 @using Aula02.Data
+@using Aula1.Model;
 @inject WeatherForecastService ForecastService
 
 <PageTitle>Weather forecast</PageTitle>
@@ -8,7 +9,7 @@
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (forecasts == null)
+@if (pessoas == null)
 {
     <p><em>Loading...</em></p>
 }
@@ -17,20 +18,20 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Date</th>
-                <th>Temp. (C)</th>
-                <th>Temp. (F)</th>
-                <th>Summary</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>DataNac</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var forecast in forecasts)
+            @foreach (var Ipessoa in pessoas)
             {
                 <tr>
-                    <td>@forecast.Date.ToShortDateString()</td>
-                    <td>@forecast.TemperatureC</td>
-                    <td>@forecast.TemperatureF</td>
-                    <td>@forecast.Summary</td>
+                    <td>@Ipessoa.id</td>
+                    <td>@Ipessoa.nome</td>
+                    <td>@Ipessoa.CPF</td>
+                    <td>@Ipessoa.DataNac</td>
                 </tr>
             }
         </tbody>
@@ -40,8 +41,53 @@ else
 @code {
     private WeatherForecast[]? forecasts;
 
+    public static List<Pessoa> pessoas { get; set; } = new();
+    public Pessoa pessoa = new Pessoa();
     protected override async Task OnInitializedAsync()
     {
+        pessoa.id = Guid.NewGuid();
+        pessoa.nome = "Gilberto";
+        pessoa.DataNac = new DateTime(2023, 7, 31, 08, 20, 20);
+        pessoa.CPF = "222.222.222-22";
+        pessoa.endereco = new Endereco();
+        pessoa.endereco.id = Guid.NewGuid();
+        pessoa.endereco.idCliente = pessoa.id;
+        pessoa.endereco.logradouro = "Rua Brasil";
+        pessoa.endereco.numero = "ao lado do 500";
+
+        if(pessoas.Exists(p => p.nome.Contains(pessoa.nome)))
+        {
+            if (pessoas.Exists(p => p.CPF.Contains(pessoa.CPF)))
+            {
+            }
+            else
+            {
+                pessoas.Add(pessoa);
+            }
+        }
+        else
+        {
+            pessoas.Add(pessoa);
+        }
+
+        foreach(var p in pessoas)
+        {
+            if (p.nome == pessoa.nome)
+            { 
+            }
+            else
+            {                
+                pessoas.Add(pessoa);
+            }
+        }
+
+
+      
+
+
+    
+
+
         forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
     }
 }
