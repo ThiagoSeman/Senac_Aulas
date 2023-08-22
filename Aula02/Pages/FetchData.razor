@@ -1,13 +1,10 @@
-﻿@page "/fetchdata"
+﻿@page "/listapessoa"
 @using Aula02.Data
 @using Aula1.Model;
-@inject WeatherForecastService ForecastService
 
-<PageTitle>Weather forecast</PageTitle>
+<PageTitle>Lista de Pessoas</PageTitle>
 
-<h1>Weather forecast</h1>
-
-<p>This component demonstrates fetching data from a service.</p>
+<h1>Lista de Pessoas</h1>
 
 @if (pessoas == null)
 {
@@ -79,15 +76,6 @@ else
             {                
                 pessoas.Add(pessoa);
             }
-        }
-
-
-      
-
-
-    
-
-
-        forecasts = await ForecastService.GetForecastAsync(DateOnly.FromDateTime(DateTime.Now));
+        }         
     }
 }

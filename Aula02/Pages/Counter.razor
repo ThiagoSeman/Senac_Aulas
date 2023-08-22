@@ -1,9 +1,10 @@
-﻿@page "/counter"
+﻿@page "/newpessoa"
+@using Aula02.Data;
 @using Aula1.Model;
 
-<PageTitle>New Pessoa</PageTitle>
+<PageTitle>Nova Pessoa</PageTitle>
 
-<h1>New Pessoa</h1>
+<h1>Nova Pessoa</h1>
 
 <h3>Nome</h3>
 <input  type="text" @bind="pessoa.nome" />
@@ -14,17 +15,45 @@
 
 <p role="status">Current count: @currentCount</p>
 
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary"
+@onclick="IncrementCount">Click me</button>
 
 @code {
-
-
-    public static List<Pessoa> pessoas { get; set; } = new();
+    
     public Pessoa pessoa = new Pessoa();
     private int currentCount = 0;
 
-    private void IncrementCount()
-    {
-        currentCount++;
+    protected override async Task OnInitializedAsync()
+    {         
+        pessoa.DataNac = DateTime.Now;
+    }
+    private void IncrementCount()  {
+        if (ListaPessoa.Pessoas.Exists(p => p.nome.Contains(pessoa.nome)))
+        {
+            if (ListaPessoa.Pessoas.Exists(p => p.CPF.Contains(pessoa.CPF)))
+            {                
+            }else
+            {
+                pessoa.id = Guid.NewGuid();
+                ListaPessoa.Pessoas.Add(pessoa);
+                pessoa = new Pessoa();
+                pessoa.DataNac = DateTime.Now;
+                currentCount++;                
+            }
+        }else
+        {
+            if (ListaPessoa.Pessoas.Exists(p => p.CPF.Contains(pessoa.CPF)))
+            {
+            }
+            else
+            {
+                pessoa.id = Guid.NewGuid();
+                ListaPessoa.Pessoas.Add(pessoa);
+                pessoa = new Pessoa();
+                pessoa.DataNac = DateTime.Now;
+                currentCount++;
+            }
+            
+        }
     }
 }

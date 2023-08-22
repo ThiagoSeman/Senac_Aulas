@@ -13,6 +13,9 @@ namespace Aula1.Model
         public DateTime DataNac { get; set; }
         public string CPF { get; set; }
         public Endereco endereco { get; set; }
+        public Pessoa()
+        {
+        }
     }
 
     public class Endereco
@@ -21,7 +24,11 @@ namespace Aula1.Model
         public Guid idCliente { get; set; }
         public string logradouro { get; set; }
         public string numero { get; set; }
+
+        public Endereco() { }
     }
+
+
 
 
 
