@@ -1,5 +1,5 @@
 ﻿@page "/fetchdata"
-@using BlazorApp1.Data
+@using Aula02.Data
 @inject WeatherForecastService ForecastService
 
 <PageTitle>Weather forecast</PageTitle>
@@ -39,6 +39,8 @@ else
 
 @code {
     private WeatherForecast[]? forecasts;
+
+    public  Pessoa Cliente { get; set; } = new Pessoa();
 
     protected override async Task OnInitializedAsync()
     {

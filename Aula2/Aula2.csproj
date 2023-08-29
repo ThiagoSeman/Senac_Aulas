@@ -6,12 +6,4 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Include="..\Aula1\Model\Pessoa.cs" Link="Models\Pessoa.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>

@@ -49,7 +49,7 @@ namespace Aula1 // Note: actual namespace depends on the project name.
             Console.WriteLine($"Digite o CPF :");
             Cliente.CPF = Console.ReadLine();
 
-            Cliente.endereco = new List<Endereco> { new Endereco() };
+            Cliente.endereco = new List<Endereco> {};
 
             bool showMenuend = true;
             while (showMenuend)

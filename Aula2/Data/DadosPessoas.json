@@ -1,0 +1,122 @@
+[
+  {
+    "id": "e7a6e7f5-2b84-4a2b-9175-87e7e17a6be3",
+    "nome": "João Silva",
+    "DataNac": "1990-05-15T00:00:00Z",
+    "CPF": "123.456.789-01",
+    "endereco": {
+      "id": "168c9bf0-78b9-4d82-8a7f-7c8696ed547f",
+      "idCliente": "e7a6e7f5-2b84-4a2b-9175-87e7e17a6be3",
+      "logradouro": "Rua A",
+      "numero": "123"
+    }
+  },
+  {
+    "id": "f24a5d96-5242-4b54-9e75-7ca34b6c94e1",
+    "nome": "Maria Santos",
+    "DataNac": "1985-10-20T00:00:00Z",
+    "CPF": "987.654.321-02",
+    "endereco": {
+      "id": "71099e64-2b7f-4d53-9234-6d74080f3d4c",
+      "idCliente": "f24a5d96-5242-4b54-9e75-7ca34b6c94e1",
+      "logradouro": "Avenida B",
+      "numero": "456"
+    }
+  },
+  {
+    "id": "94b86f2b-3b7c-47e3-a2d0-66c8a25e73fc",
+    "nome": "Carlos Oliveira",
+    "DataNac": "1982-08-10T00:00:00Z",
+    "CPF": "555.555.555-55",
+    "endereco": {
+      "id": "6a488924-3a82-4df9-971a-8b41a1966d9e",
+      "idCliente": "94b86f2b-3b7c-47e3-a2d0-66c8a25e73fc",
+      "logradouro": "Rua C",
+      "numero": "789"
+    }
+  },
+  {
+    "id": "0e9948d3-4f4c-464c-8702-0cd9b2fda5ac",
+    "nome": "Ana Oliveira",
+    "DataNac": "1995-03-25T00:00:00Z",
+    "CPF": "777.777.777-77",
+    "endereco": {
+      "id": "9e0bb56c-160b-417d-9d87-383199f4f161",
+      "idCliente": "0e9948d3-4f4c-464c-8702-0cd9b2fda5ac",
+      "logradouro": "Rua D",
+      "numero": "1011"
+    }
+  },
+  {
+    "id": "5b2da850-1c9d-4a7e-86d1-c0abdbb4812a",
+    "nome": "Fernanda Pereira",
+    "DataNac": "1988-12-01T00:00:00Z",
+    "CPF": "222.222.222-22",
+    "endereco": {
+      "id": "e85c35e4-b44f-4a4f-96d1-3eb3d83f7179",
+      "idCliente": "5b2da850-1c9d-4a7e-86d1-c0abdbb4812a",
+      "logradouro": "Avenida E",
+      "numero": "1314"
+    }
+  },
+  {
+    "id": "91db90ad-75f5-42a6-b245-d7180a0d7aae",
+    "nome": "Rafaela Lima",
+    "DataNac": "1992-07-08T00:00:00Z",
+    "CPF": "444.444.444-44",
+    "endereco": {
+      "id": "b81d17f4-768e-4db5-9b9d-3e8c3f48d27c",
+      "idCliente": "91db90ad-75f5-42a6-b245-d7180a0d7aae",
+      "logradouro": "Rua F",
+      "numero": "1516"
+    }
+  },
+  {
+    "id": "3c5341ab-225e-4656-92db-3d7fcf1338b2",
+    "nome": "Pedro Alves",
+    "DataNac": "1987-04-12T00:00:00Z",
+    "CPF": "666.666.666-66",
+    "endereco": {
+      "id": "91a2d02b-61a9-4f53-8eb4-0c707b5eb3d0",
+      "idCliente": "3c5341ab-225e-4656-92db-3d7fcf1338b2",
+      "logradouro": "Avenida G",
+      "numero": "1718"
+    }
+  },
+  {
+    "id": "86e6875c-7381-4c09-8e21-6ce0e8e42803",
+    "nome": "Luisa Martins",
+    "DataNac": "1993-11-30T00:00:00Z",
+    "CPF": "888.888.888-88",
+    "endereco": {
+      "id": "376a10b7-47b2-44df-ba02-b172f9a9290e",
+      "idCliente": "86e6875c-7381-4c09-8e21-6ce0e8e42803",
+      "logradouro": "Rua H",
+      "numero": "1920"
+    }
+  },
+  {
+    "id": "e7a6e7f5-2b84-4a2b-9175-87e7e17a6be3",
+    "nome": "João Silva",
+    "DataNac": "1990-05-15T00:00:00Z",
+    "CPF": "123.456.789-01",
+    "endereco": {
+      "id": "168c9bf0-78b9-4d82-8a7f-7c8696ed547f",
+      "idCliente": "e7a6e7f5-2b84-4a2b-9175-87e7e17a6be3",
+      "logradouro": "Rua A",
+      "numero": "123"
+    }
+  },
+  {
+    "id": "f24a5d96-5242-4b54-9e75-7ca34b6c94e1",
+    "nome": "Maria Santos",
+    "DataNac": "1985-10-20T00:00:00Z",
+    "CPF": "987.654.321-02",
+    "endereco": {
+      "id": "71099e64-2b7f-4d53-9234-6d74080f3d4c",
+      "idCliente": "f24a5d96-5242-4b54-9e75-7ca34b6c94e1",
+      "logradouro": "Avenida B",
+      "numero": "456"
+    }
+  }  
+]

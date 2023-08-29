@@ -1,0 +1,62 @@
+﻿@page "/fetchdata"
+@using Aula1.Model;
+@using Aula2.Data
+@using System;
+@using System.Collections.Generic;
+@using System.Threading.Tasks;
+@using System.IO;
+@using System.Text.Json;
+
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (pessoas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>DATA NASC</th>
+                <th>CPF</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pessoa in pessoas)
+            {
+                <tr>
+                    <td>@pessoa.id</td>
+                    <td>@pessoa.nome</td>
+                    <td>@pessoa.DataNac</td>
+                    <td>@pessoa.CPF</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private WeatherForecast[]? forecasts;
+    private List<Pessoa> pessoas { get; set; } = new List<Pessoa>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        string jsonFilePath = ".\\Data\\DadosPessoas.json"; // Coloque o caminho do seu arquivo JSON
+
+        DadosPessoas jsonReader = new DadosPessoas();
+        pessoas = await jsonReader.ReadJsonAsync(jsonFilePath);
+
+        if(pessoas == null)
+        {
+            
+        }
+    }
+}
