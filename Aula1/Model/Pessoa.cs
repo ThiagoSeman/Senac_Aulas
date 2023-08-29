@@ -12,7 +12,7 @@ namespace Aula1.Model
         public string nome { get; set; }
         public DateTime DataNac { get; set; }
         public string CPF { get; set; }
-        public Endereco endereco { get; set; }
+        public List<Endereco> endereco { get; set; }
         public Pessoa()
         {
         }
