@@ -21,7 +21,7 @@ internal class ListaPedido
     }
     static bool MainMenu()
     {
-
+        Console.WriteLine($"<---------------------------->");
         Console.WriteLine($"Digite 1 para incluir pedido:");
         Console.WriteLine($"Digite 2 para concluir pedido");
         Console.WriteLine($"Digite 3 para Listar pedidos pendentes");
@@ -30,29 +30,21 @@ internal class ListaPedido
         if (linha == "1")
         {
             addPedido();
-
-
             return true;
         }
         else if (linha == "2")
         {
-            Console.WriteLine("Nao implementado");
-
-
+            ConcluirPedido();
             return true;
         }
         else if (linha == "3")
         {
             ListarPedidoPendente();
-
-
             return true;
         }
         else if (linha == "4")
         {
-            Console.WriteLine("Nao implementado");
-
-
+            ListarPedidoConcluidos();
             return true;
         }
 
@@ -63,8 +55,24 @@ internal class ListaPedido
         }
     }
 
+    public static void ConcluirPedido()
+    {
+        if (filaPedidos.Count > 0)
+        {
+            Pedido pedidoAtual = filaPedidos.Dequeue();
+            Console.WriteLine($"<---------------------------->");
+            Console.WriteLine($"Finalizandopedido do {pedidoAtual.Cliente} com o {pedidoAtual.Produto}(s)...");
+           
+            pedidoConcluido.Add(pedidoAtual);
+        }
+        else {
+            Console.WriteLine($"<---------------------------->"); 
+            Console.WriteLine("Sem pedido para Concluir"); }
+    }
+
     public static void addPedido()
     {
+        Console.WriteLine($"<---------------------------->");
         Console.WriteLine($"Digite seu nome");
         var Nome = Console.ReadLine();
         Console.WriteLine($"Lista de produtos");
@@ -93,6 +101,7 @@ internal class ListaPedido
         {
             foreach( var pedido in filaPedidos)
             {
+                Console.WriteLine($"<---------------------------->");
                 Console.WriteLine($"pedido com o Cliente:{pedido.Cliente}");
                 Console.WriteLine($"produto :{pedido.Produto}");
                 Console.WriteLine($"quantidade {pedido.Qtd}");
@@ -102,5 +111,21 @@ internal class ListaPedido
         {
             Console.WriteLine("Lista Vasia");
         }        
+    }
+    public static void ListarPedidoConcluidos()
+    {
+        if (pedidoConcluido.Count() > 0)
+        {
+            foreach (var pedido in pedidoConcluido)
+            {
+                Console.WriteLine($"pedido com o Cliente:{pedido.Cliente}");
+                Console.WriteLine($"produto :{pedido.Produto}");
+                Console.WriteLine($"quantidade {pedido.Qtd}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Lista Vasia");
+        }
     }
 }
